@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Cotizador</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/cotizador.js"></script>
+<link rel="stylesheet" href="css/cotizador.css">
+</head>
+<body>
+<div class="container text-center text-white">
+    <div class="row pt-5">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4">Cotizador</h1> 
+        Producto: <select name="producto" id="producto" onchange="cargarMateriales();"><option value="">Selecciona un producto</option></select><br><br>
+        Material:<select name="material" id="material"><option value="">Selecciona un material</option></select><br><br>Cantidad:<input id="cantidad" type="number" name = "cantidad" placeholder = "Inserta la cantidad"><br><br>
+        <button id="btn_guardar" onclick="todos()">Agregar</button>
+<br><br>
+<div>
+        <table >
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Material</th>
+                    <th>Proveedor</th>
+                    <th>Precio</th>
+                    <th>Unidad</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr class = "manoobrafoot">
+                    <td colspan=6>Mano de obra</td>
+                    <td><input type="number" name="manoobra"  style="width:60px;" id="manoobra" onchange="manoObra()"/></td>
+                </tr>
+                <tr class = "intalacionfoot">
+                    <td colspan=6>Instalación y flete</td>
+                    <td ><input type="number" name="instalacion"  style="width:60px;" id="instalacion" onchange="instalacion()" placeholder="0" /></td>
+                </tr>
+                <tr class = "subtotalfoot">
+                    <td colspan=6>Subtotal</td>
+                    <td id="subtotal"></td>
+                </tr>
+                <tr class = "utilidadfoot">
+                    <td colspan=6>Utilidad</td>
+                    <td><name="utilidad" id="utilidad"/>60%</td>
+                </tr>
+                <tr class = "totalfoot">
+                    <td colspan=6>Total</td>
+                    <td id="totalote"></td>
+                </tr>
+            </tfoot>
+            <tbody id="tablita">
+
+            </tbody>
+        </table>
+	</div>
+      </div>
+      
+  </div>
+</div>
+</body>
+</html>
